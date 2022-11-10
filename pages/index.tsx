@@ -1,37 +1,40 @@
 import { Box } from '@mui/material';
-import Block from '../components/Block';
-import styles from '../styles/Home.module.css'
+import Block from '../layouts/Block';
+import Header from '../components/Header';
+import MainContainer from '../layouts/MainContainer/MainContainer';
 
 const blocks = [
   {
-    title: 'example1',
+    title: 'Who we are?',
     type: 'banner',
     position: '1',
     id: 1,
-    backdround: 'https://images.pexels.com/photos/268533/pexels-photo-268533.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
+    backdround: 'https://minimals.cc/assets/images/about/hero.jpg',
   },
   {
-    title: 'example2',
+    title: 'Who we are?',
     type: 'banner',
     position: '1',
     id: 2,
-    backdround: 'https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg',
+    backdround: 'https://minimals.cc/assets/images/about/hero.jpg',
   },
 ];
 
 export default function Home() {
   return (
-    <Box
-      margin="0 auto"
-      width="100%"
-      display="flex"
-      justifyContent="center"
-    >
-      <Box width="100%">
+    <MainContainer>
+      <Header />
+      <Box
+        width="100%"
+        display="flex"
+        justify-content="center"
+        flexDirection="column"
+        alignItems="center"
+      >
         {blocks.map( el => {
           return <Block {...el} key={el.id} />
         })}
       </Box>
-    </Box>
+    </MainContainer>
   )
 }
